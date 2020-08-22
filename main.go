@@ -16,10 +16,10 @@ type Config struct {
 */
 
 type Config struct {
-	VpnInfo struct {
-		CustId     string
-		VpnNetwork string
-		VpnAddress string
+	Vpninfo struct {
+		Cust_id     string
+		Vpn_network string
+		Vpn_address string
 	}
 }
 
@@ -79,9 +79,9 @@ func readConfig(configfile string) error {
 		return err
 	}
 
-	fmt.Printf("cust_id: %s\n", config.VpnInfo.CustId)
-	fmt.Printf("vpn_network: %s\n", config.VpnInfo.VpnNetwork)
-	fmt.Printf("vpn_address: %s\n", config.VpnInfo.VpnAddress)
+	fmt.Printf("cust_id: %s\n", config.Vpninfo.Cust_id)
+	fmt.Printf("vpn_network: %s\n", config.Vpninfo.Vpn_network)
+	fmt.Printf("vpn_address: %s\n", config.Vpninfo.Vpn_address)
 	//printConfig(&config)
 
 	return nil
