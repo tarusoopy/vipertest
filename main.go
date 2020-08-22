@@ -39,7 +39,7 @@ func main() {
 		&configfile,
 		"configfile",
 		"c",
-		"/etc/variosecure/vsocket.toml",
+		"./vsocket.toml",
 		"config file path")
 	flag.Parse()
 
