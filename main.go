@@ -77,19 +77,3 @@ func readConfig(configfile string) error {
 
 	return nil
 }
-
-/*
-func printConfig(config *Config) {
-	fmt.Printf("cust_id: %s\n", config.vpninfo.CustId)
-	fmt.Printf("vpn_network: %s\n", config.vpninfo.VpnNetwork)
-	fmt.Printf("vpn_address: %s\n", config.vpninfo.VpnAddress)
-	fmt.Printf("dbuser: %s\n", config.dbinfo.DbUser)
-	fmt.Printf("dbpass: %s\n", config.dbinfo.DbPass)
-	fmt.Printf("dbhost: %s\n", config.dbinfo.DbHost)
-	fmt.Printf("dbname: %s\n", config.dbinfo.DbName)
-	fmt.Printf("newpc_endpoint: %s\n", config.pcregister.NewPcEndpoint)
-	fmt.Printf("idmatch_endpoint: %s\n", config.pcregister.IdMatchEdpoint)
-	fmt.Printf("ipregister_endpoint: %s\n", config.pcregister.IpRegisterEndpoint)
-	fmt.Printf("port: %s\n", config.pcregister.Port)
-}
-*/
