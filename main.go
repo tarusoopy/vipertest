@@ -13,6 +13,13 @@ type Config struct {
 	pcregister PcRegister
 }
 
+/*
+type Config struct {
+	VpnInfo struct{
+
+	}
+}
+*/
 type PcRegister struct {
 	NewPcEndpoint      string
 	IdMatchEdpoint     string
@@ -21,16 +28,16 @@ type PcRegister struct {
 }
 
 type VpnInfo struct {
-	CustId     string `config:"cust_id"`
-	VpnNetwork string `config:"vpnnetwork"`
-	VpnAddress string `config:"vpnaddress"`
+	CustId     string
+	VpnNetwork string
+	VpnAddress string
 }
 
 type DbInfo struct {
-	DbUser string `config:"dbuser"`
-	DbPass string `config:"dbpass"`
-	DbHost string `config:"dbhost"`
-	DbName string `config:"dbname"`
+	DbUser string
+	DbPass string
+	DbHost string
+	DbName string
 }
 
 func main() {
