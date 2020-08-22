@@ -7,14 +7,6 @@ import (
 	"os"
 )
 
-/*
-type Config struct {
-	vpninfo    VpnInfo
-	dbinfo     DbInfo
-	pcregister PcRegister
-}
-*/
-
 type Config struct {
 	VpnInfo struct {
 		Cust_id     string
@@ -29,7 +21,7 @@ type Config struct {
 	}
 	PcRegister struct {
 		NewPc_Endpoint      string
-		IdMatch_Edpoint     string
+		IdMatch_Endpoint    string
 		IpRegister_Endpoint string
 		Port                string
 	}
@@ -63,7 +55,6 @@ func readConfig(configfile string) error {
 	if err := viper.ReadInConfig(); err != nil {
 		return err
 	}
-	fmt.Printf("cust_id: %s\n", viper.GetString("cust_id"))
 
 	// 値読み込み
 	if err := viper.Unmarshal(&config); err != nil {
@@ -74,6 +65,14 @@ func readConfig(configfile string) error {
 	fmt.Printf("cust_id: %s\n", config.VpnInfo.Cust_id)
 	fmt.Printf("vpn_network: %s\n", config.VpnInfo.Vpn_network)
 	fmt.Printf("vpn_address: %s\n", config.VpnInfo.Vpn_address)
+	fmt.Printf("dbuser: %s\n", config.DbInfo.DbUser)
+	fmt.Printf("dbpass: %s\n", config.DbInfo.DbPass)
+	fmt.Printf("dbhost: %s\n", config.DbInfo.DbHost)
+	fmt.Printf("dbname: %s\n", config.DbInfo.DbName)
+	fmt.Printf("newpc_endpoint: %s\n", config.PcRegister.NewPc_Endpoint)
+	fmt.Printf("idmatch_endpoint: %s\n", config.PcRegister.IdMatch_Endpoint)
+	fmt.Printf("ipregister_endpoint: %s\n", config.PcRegister.IpRegister_Endpoint)
+	fmt.Printf("port: %s\n", config.PcRegister.Port)
 	//printConfig(&config)
 
 	return nil
