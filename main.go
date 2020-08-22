@@ -7,19 +7,22 @@ import (
 	"os"
 )
 
+/*
 type Config struct {
 	vpninfo    VpnInfo
 	dbinfo     DbInfo
 	pcregister PcRegister
 }
+*/
 
-/*
 type Config struct {
-	VpnInfo struct{
-
+	VpnInfo struct {
+		CustId     string
+		VpnNetwork string
+		VpnAddress string
 	}
 }
-*/
+
 type PcRegister struct {
 	NewPcEndpoint      string
 	IdMatchEdpoint     string
