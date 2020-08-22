@@ -16,31 +16,23 @@ type Config struct {
 */
 
 type Config struct {
-	Vpninfo struct {
+	VpnInfo struct {
 		Cust_id     string
 		Vpn_network string
 		Vpn_address string
 	}
-}
-
-type PcRegister struct {
-	NewPcEndpoint      string
-	IdMatchEdpoint     string
-	IpRegisterEndpoint string
-	Port               string
-}
-
-type VpnInfo struct {
-	CustId     string
-	VpnNetwork string
-	VpnAddress string
-}
-
-type DbInfo struct {
-	DbUser string
-	DbPass string
-	DbHost string
-	DbName string
+	DbInfo struct {
+		DbUser string
+		DbPass string
+		DbHost string
+		DbName string
+	}
+	PcRegister struct {
+		NewPc_Endpoint      string
+		IdMatch_Edpoint     string
+		IpRegister_Endpoint string
+		Port                string
+	}
 }
 
 func main() {
@@ -79,9 +71,9 @@ func readConfig(configfile string) error {
 		return err
 	}
 
-	fmt.Printf("cust_id: %s\n", config.Vpninfo.Cust_id)
-	fmt.Printf("vpn_network: %s\n", config.Vpninfo.Vpn_network)
-	fmt.Printf("vpn_address: %s\n", config.Vpninfo.Vpn_address)
+	fmt.Printf("cust_id: %s\n", config.VpnInfo.Cust_id)
+	fmt.Printf("vpn_network: %s\n", config.VpnInfo.Vpn_network)
+	fmt.Printf("vpn_address: %s\n", config.VpnInfo.Vpn_address)
 	//printConfig(&config)
 
 	return nil

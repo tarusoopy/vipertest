@@ -2,3 +2,15 @@ vpninfo:
   cust_id: "0000"
   vpn_network: "192.168.0.0/24"
   vpn_address: "192.168.0.1"
+
+dbinfo:
+  dbuser: "postgres"
+  dbpass: "P@ssw0rd"
+  dbhost: "10.29.113.3"
+  dbname: "postgres"
+
+pcregister:
+  newpc_endpoint: "/pcregister/v1/newpc"
+  idmatch_endpoint: "/pcregister/v1/idmatch"
+  ipregister_endpoint: "/pcregister/v1/ipregist"
+  port: "38080"
