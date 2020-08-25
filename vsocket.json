@@ -8,6 +8,7 @@
 	"dbuser": "postgres",
 	"dbpass": "P@ssw0rd",
 	"dbhost": "10.29.113.3",
+	"dbport": "5432",
 	"dbname": "postgres"
     },
     "pcregister": {

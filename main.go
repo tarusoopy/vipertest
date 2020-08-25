@@ -17,6 +17,7 @@ type Config struct {
 		DbUser string
 		DbPass string
 		DbHost string
+		DbPort string
 		DbName string
 	}
 	PcRegister struct {
