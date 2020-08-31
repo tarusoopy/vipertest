@@ -25,17 +25,25 @@ type Config struct {
 		IdMatch_Endpoint    string
 		IpRegister_Endpoint string
 		Port                string
+		Logfile             string
 	}
 }
 
 func main() {
 	var configfile string
+	var logfile string
 	flag.StringVarP(
 		&configfile,
 		"configfile",
 		"c",
-		"./vsocket.toml",
+		"./vsocket.ini",
 		"config file path")
+	flag.StringVarP(
+		&logfile,
+		"logfile",
+		"l",
+		"./flag.log",
+		"log file path")
 	flag.Parse()
 
 	e := readConfig(configfile)
@@ -50,6 +58,7 @@ func readConfig(configfile string) error {
 
 	// コンフィグ読み込み
 	viper.SetConfigFile(configfile)
+	viper.BindPFlag("logfile", flag.Lookup("logfile"))
 	fmt.Printf("configfile: %s\n", configfile)
 	//viper.AddConfigPath("/etc/variosecure")
 	//viper.SetConfigType("json")
@@ -74,6 +83,7 @@ func readConfig(configfile string) error {
 	fmt.Printf("idmatch_endpoint: %s\n", config.PcRegister.IdMatch_Endpoint)
 	fmt.Printf("ipregister_endpoint: %s\n", config.PcRegister.IpRegister_Endpoint)
 	fmt.Printf("port: %s\n", config.PcRegister.Port)
+	fmt.Printf("logfile: %s\n", config.PcRegister.Logfile)
 	//printConfig(&config)
 
 	return nil
