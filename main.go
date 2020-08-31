@@ -42,7 +42,7 @@ func main() {
 		&logfile,
 		"logfile",
 		"l",
-		"./flag.log",
+		"defaultflag.log",
 		"log file path")
 	flag.Parse()
 
@@ -57,8 +57,10 @@ func readConfig(configfile string) error {
 	var config Config
 
 	// コンフィグ読み込み
+	if err := viper.BindPFlag("pcregister.logfile", flag.Lookup("logfile")); err != nil {
+		return err
+	}
 	viper.SetConfigFile(configfile)
-	viper.BindPFlag("logfile", flag.Lookup("logfile"))
 	fmt.Printf("configfile: %s\n", configfile)
 	//viper.AddConfigPath("/etc/variosecure")
 	//viper.SetConfigType("json")
@@ -83,7 +85,7 @@ func readConfig(configfile string) error {
 	fmt.Printf("idmatch_endpoint: %s\n", config.PcRegister.IdMatch_Endpoint)
 	fmt.Printf("ipregister_endpoint: %s\n", config.PcRegister.IpRegister_Endpoint)
 	fmt.Printf("port: %s\n", config.PcRegister.Port)
-	fmt.Printf("logfile: %s\n", config.PcRegister.Logfile)
+	fmt.Printf("logfile: %s\n", viper.GetString("pcregister.logfile"))
 	//printConfig(&config)
 
 	return nil
